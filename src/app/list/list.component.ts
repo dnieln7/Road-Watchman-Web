@@ -1,8 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {} from 'googlemaps';
-import Marker = google.maps.Marker;
-import LatLng = google.maps.LatLng;
-import Map = google.maps.Map;
+import {Component, OnInit} from '@angular/core';
+import {Reporte} from '../models/reporte';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-list',
@@ -11,32 +9,34 @@ import Map = google.maps.Map;
 })
 export class ListComponent implements OnInit {
 
-  @ViewChild('map', {static: true}) mapElement: any;
-  map: google.maps.Map;
+  dateBegin: string;
+  dateEnd: any;
+  reportes: Reporte[];
+  reportesFilter: Reporte[];
+  reporte: Reporte;
+  address: string;
+  date: any;
 
-  constructor() { }
+  constructor(private pipe: DatePipe) { }
 
   ngOnInit() {
-    const myPosition = new LatLng(35.2271, -80.8431);
+    this.reporte = new Reporte();
 
-    const mapProperties = {
-      center: new google.maps.LatLng(35.2271, -80.8431),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-    };
+    this.reporte.id = 1;
+    this.reporte.lat = 1;
+    this.reporte.lon = 1;
+    this.reporte.img = 'link';
+    this.reporte.address = 'Calle pascual de los Santos';
+    this.reporte.date = new Date();
 
-    const myMap = new Map(this.mapElement.nativeElement, {
-      zoom: 10,
-      center: myPosition
-    });
+    this.date = this.pipe.transform(this.reporte.date, 'yyyy-MM-dd');
 
-    const marker = new Marker({
-      position: myPosition,
-      map: myMap,
-      title: 'hi!'
-    });
-
-    this.map = myMap;
+    this.reportesFilter = [this.reporte];
   }
 
+  search() {
+    if (this.date > this.dateBegin && this.date <= this.dateEnd) {
+
+    }
+  }
 }
