@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ListComponent } from './list/list.component';
+import { MapViewComponent } from './map-view/map-view.component';
 import {FormsModule} from '@angular/forms';
 import {DatePipe} from '@angular/common';
 
@@ -15,6 +16,7 @@ import {DatePipe} from '@angular/common';
     HomeComponent,
     LoginComponent,
     ListComponent,
+    MapViewComponent
   ],
   imports: [
     BrowserModule,
