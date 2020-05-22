@@ -1,0 +1,33 @@
+<div class="p-2 position-sticky">
+
+  <div class="row m-2 align-items-center">
+    <input class="col order-last form-control d-inline" type="search" placeholder="Search by location" aria-label="Search by location" id="search">
+  </div>
+
+  <div class="list-group" *ngFor="let report of reports">
+    <a routerLink="view/{{report.id}}"
+       class="list-group-item list-group-item-action active my-1 bg-light text-dark border-dark">
+      <div class="row">
+
+        <div class="col-1">
+          <img src="{{report.picture}}" alt="..." class="img-thumbnail" *ngIf="report.picture !== ''">
+        </div>
+
+        <div class="col order-last">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{report.location_description}}</h5>
+            <small>{{report.date | date}}</small>
+          </div>
+
+          <p class="mb-1">{{report.description}}</p>
+
+          <div class="custom-control custom-checkbox mt-3">
+            <input type="checkbox" class="custom-control-input" id="fixed" [checked]="report.fixed">
+            <label class="custom-control-label" for="fixed">Fixed</label>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  </div>
+</div>
