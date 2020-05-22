@@ -1,32 +1,22 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {LoginComponent} from './login/login.component';
-import {ListComponent} from './list/list.component';
-import {HomeComponent} from './home/home.component';
-import {MapViewComponent} from './map-view/map-view.component';
-
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {
-    path: '',
-    component: HomeComponent
+    path: 'pages',
+    loadChildren: () => import('./pages/pages.module').then(value => value.PagesModule)
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'authentication',
+    loadChildren: () => import('./authentication/authentication.module').then(value => value.AuthenticationModule)
   },
-  {
-    path: 'reportes',
-    component: ListComponent
-  },
-  {
-    path: 'reportes/view/:id',
-    component: MapViewComponent
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {
+}

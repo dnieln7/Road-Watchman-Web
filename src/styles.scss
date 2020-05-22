@@ -1,5 +1,6 @@
 body {
-  font-family: "Times New Roman", sans-serif;
-  background: #e1e1e1;
   margin: 0;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
