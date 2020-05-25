@@ -6,7 +6,7 @@ import {ReportDetailComponent} from './report-detail/report-detail.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: ReportDetailComponent},
   {path: 'reports', component: ReportsComponent},
   {path: 'reports/view/:id', component: ReportDetailComponent},
 ];

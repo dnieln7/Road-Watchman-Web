@@ -6,14 +6,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReportsComponent} from './reports/reports.component';
 import {ReportDetailComponent} from './report-detail/report-detail.component';
 import {ReportDataService} from '../services/report.data.service';
+import {FormsModule} from '@angular/forms';
 
-const MODULES = [CommonModule, PagesRoutingModule, NgbModule];
+const MODULES = [CommonModule, PagesRoutingModule, NgbModule, FormsModule];
 
 const COMPONENTS = [HomeComponent, ReportsComponent, ReportDetailComponent];
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [...MODULES],
+    imports: [...MODULES],
   exports: [...COMPONENTS],
   providers: [ReportDataService]
 })

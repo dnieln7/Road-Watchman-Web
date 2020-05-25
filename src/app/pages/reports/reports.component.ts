@@ -25,8 +25,4 @@ export class ReportsComponent implements OnInit {
       this.reports = value;
     });
   }
-
-  log(report) {
-    console.log(report);
-  }
 }
