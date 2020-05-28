@@ -6,15 +6,20 @@
       </div>
       <div class="col-md-6 col-lg-8">
         <div class="card-body text-center h-100 d-flex flex-column justify-content-between">
-          <h5 class="card-title">Pascual de los santos #4</h5>
+          <h5 class="card-title">{{report.location_description}}</h5>
           <div>
-            <h6 class="card-subtitle">Comentario</h6>
+            <h6 class="card-subtitle">{{report.description}}</h6>
           </div>
           <div class="card-footer bg-transparent border-0 mb-0">
-            <a href="#" class="card-link">Review</a>
-            <a href="#" class="card-link">View Picture</a>
+            <button type="button" class="btn btn-primary btn-block" (click)="open(picture)">
+              Set as fixed
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="open(picture)"
+                    *ngIf="report.picture !== ''">
+              View Picture
+            </button>
             <p class="card-text mt-2">
-              <small class="text-muted">20 de abril del 2020</small>
+              <small class="text-muted">{{report.date | date}}</small>
             </p>
           </div>
         </div>
@@ -22,3 +27,15 @@
     </div>
   </div>
 </div>
+
+<ng-template #picture let-modal>
+  <div class="modal-header">
+    <h6 class="modal-title" id="title">Picture view</h6>
+    <button type="button" class="close text-danger" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src="{{report.picture}}" alt="thumbnail" class="img-thumbnail">
+  </div>
+</ng-template>

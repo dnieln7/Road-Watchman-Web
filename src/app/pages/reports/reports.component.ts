@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Report} from '../../models/Report';
 import {ReportDataService} from '../../services/report.data.service';
 
@@ -9,7 +9,7 @@ import {ReportDataService} from '../../services/report.data.service';
 })
 export class ReportsComponent implements OnInit {
 
-  reports: Array<Report>;
+  protected reports: Array<Report>;
 
   constructor(private dataService: ReportDataService) {
   }
@@ -20,8 +20,8 @@ export class ReportsComponent implements OnInit {
     this.getReports();
   }
 
-  getReports() {
-    this.dataService.findAll(1).subscribe(value => {
+  private getReports() {
+    this.dataService.findAll().subscribe(value => {
       this.reports = value;
     });
   }

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {retry, catchError} from 'rxjs/operators';
 import {handleError} from './data.service.utils';
 import {Report} from '../models/Report';
@@ -8,7 +8,7 @@ import {Report} from '../models/Report';
 @Injectable()
 export class ReportDataService {
 
-  apiURL = 'https://calm-gorge-58988.herokuapp.com';
+  private apiURL = 'https://calm-gorge-58988.herokuapp.com';
 
   constructor(private http: HttpClient) {
   }
@@ -21,8 +21,13 @@ export class ReportDataService {
     })
   };
 
-  findAll(user: number): Observable<Array<Report>> {
-    return this.http.get<Array<Report>>(this.apiURL + '/report?user=' + user, this.httpOptions)
+  findAll(): Observable<Array<Report>> {
+    return this.http.get<Array<Report>>(this.apiURL + '/report', this.httpOptions)
+      .pipe(retry(1), catchError(handleError));
+  }
+
+  findById(id: number): Observable<Report> {
+    return this.http.get<Report>(this.apiURL + '/report/' + id, this.httpOptions)
       .pipe(retry(1), catchError(handleError));
   }
 
