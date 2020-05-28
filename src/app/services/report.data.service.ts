@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {retry, catchError} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {catchError, retry} from 'rxjs/operators';
 import {handleError} from './data.service.utils';
 import {Report} from '../models/Report';
 

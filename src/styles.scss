@@ -1,9 +1,23 @@
-body {
-  margin: 0;
-}
-
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
 /* Importing leaflet CSS file*/
 @import "~leaflet/dist/leaflet.css";
+
+/* Importing custom font*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap');
+
+:root {
+  --cursive-custom: 'Dancing Script', cursive;
+  --normal-custom : 'Quicksand', sans-serif;
+
+  --color-primary-light: #9fa8da;
+  --color-primary: #6f79a8;
+
+  --color-secondary-light: #ffffbf;
+  --color-secondary: #eded8e;
+}
+
+body {
+  margin: 0;
+}
