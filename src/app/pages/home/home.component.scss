@@ -1,9 +1,54 @@
-.body {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: left;
-  background-color: #fff;
- }
+.back-img {
+  background-image: url("src/assets/images/main.png ");
+}
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -25%;
+  left: auto;
+  width: 18rem;
+  height: 30rem;
+  background-color: var(--color-primary);
+  border-radius: 21px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  left: 10%;
+  background-color: var(--color-secondary);
+}
+
+.btn-outline-primary {
+  color: var(--light);
+  border: 0;
+}
+
+.btn-outline-primary:hover {
+  color: var(--light);
+  background-color: var(--color-primary-light);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle {
+  background-color: var(--color-primary-light);
+  border: inherit;
+}
+
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border: 0;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.card-link {
+  color: var(--dark);
+}
+
+.card-link:hover {
+  color: var(--color-primary-light);
+}
