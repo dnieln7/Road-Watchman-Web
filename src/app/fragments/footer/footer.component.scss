@@ -1,23 +1,72 @@
-/*a {
-  margin: 1em;
-  color: #737373;
-  font-family: "Times New Roman", sans-serif;
-  text-decoration-line: none;
-  font-weight: bold;
-  font-size: 1.5em;
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  position: sticky;
+
+  height: 100%;
+  width: 100%;
+
+  padding: 1rem;
+
+  font-family: var(--normal-custom);
+
+  color: var(--light);
+  background-color: var(--dark);
 }
 
-footer {
-  background: whitesmoke;
-  width: 100%;
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5em;
-}*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-footer {
-  background-color: white;
+.footer-body {
+  align-self: center;
+}
+
+/* Logo */
+.footer-body h1 {
+  float: none;
+  line-height: 1;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+/*Brand*/
+.footer-body h1 a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+/* Logo Img*/
+.img-custom {
+  box-sizing: border-box;
+  height: 10%;
+  width: 10%;
+  border: solid 0;
+  border-radius: 25%;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* The navigation links */
+.footer-body nav {
+  float: none;
+  text-align: center;
+  font-size: 1em;
+}
+
+/*Brand links*/
+.footer-body nav a {
+  display: inline-block;
+  color: var(--color-primary-light);
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+/*Brand links when hover*/
+.footer-body nav a:hover {
+  color: var(--color-secondary);
 }
