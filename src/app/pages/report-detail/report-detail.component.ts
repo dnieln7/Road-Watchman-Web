@@ -5,6 +5,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ActivatedRoute} from '@angular/router';
 
 import * as L from 'leaflet';
+import {User} from '../../models/User';
 
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
@@ -28,6 +29,8 @@ L.Marker.prototype.options.icon = iconDefault;
 })
 export class ReportDetailComponent implements OnInit, AfterViewInit {
 
+  protected user: User;
+
   private id: number;
   private report: Report;
   private map: L.map;
@@ -40,10 +43,12 @@ export class ReportDetailComponent implements OnInit, AfterViewInit {
     this.route.pathFromRoot[2].url.subscribe(value => {
       this.id = Number(value[2].path);
     });
+    this.user = null;
   }
 
   ngOnInit(): void {
     this.loadReport();
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
 
   ngAfterViewInit(): void {
@@ -60,10 +65,6 @@ export class ReportDetailComponent implements OnInit, AfterViewInit {
     }).addTo(this.map);
 
     L.circleMarker([this.report.location[0], this.report.location[1]]).addTo(this.map);
-  }
-
-  private setMakeMarker(map: L.map): void {
-
   }
 
   open(target) {

@@ -11,7 +11,7 @@
             <h6 class="card-subtitle">{{report.description}}</h6>
           </div>
           <div class="card-footer bg-transparent border-0 mb-0">
-            <button type="button" class="btn btn-primary btn-block" (click)="open(picture)">
+            <button type="button" class="btn btn-primary btn-block" (click)="open(picture)" *ngIf="user !== null">
               Set as fixed
             </button>
             <button type="button" class="btn btn-outline-primary btn-block" (click)="open(picture)"

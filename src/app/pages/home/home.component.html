@@ -21,11 +21,20 @@
   <div class="product-device product-device-2 box-shadow d-none d-md-block"><!--Image from app--></div>
 </div>
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded bg-light">
+<div *ngIf="user === null" class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded bg-light">
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
       <h2 class="display-5"><a routerLink="/authentication" class="card-link">Log In</a></h2>
       <p class="lead">View and edit the reports</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="user !== null" class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded bg-light">
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">Welcome</h2>
+      <p class="lead">Logged as {{user.username}}</p>
     </div>
   </div>
 </div>

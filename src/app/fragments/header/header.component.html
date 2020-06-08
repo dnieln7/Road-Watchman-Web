@@ -7,8 +7,9 @@
     </h1>
   </div>
   <nav>
-    <a routerLink="pages" (click)="select('HOME')" [class.selected]="selected === 'HOME'">Home</a>
-    <a routerLink="authentication" (click)="select('LOGIN')" [class.selected]="selected == 'LOGIN'">Login</a>
+    <a routerLink="pages" (click)="select('home')" [class.selected]="selected === 'home'">Home</a>
+    <a routerLink="authentication" (click)="select('login')" [class.selected]="selected == 'login'" *ngIf="user === null">Login</a>
+    <p class="link" (click)="logout()" *ngIf="user !== null">Logout</p>
   </nav>
 </header>
 
