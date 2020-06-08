@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  protected selected: string;
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+    this.select('HOME');
+  }
+
+  protected select(option) {
+    console.log(option);
+    this.selected = option;
+  }
 }

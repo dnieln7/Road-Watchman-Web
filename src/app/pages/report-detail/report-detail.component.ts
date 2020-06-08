@@ -47,8 +47,9 @@ export class ReportDetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    const mapContainer = document.getElementById('map');
 
-    this.map = L.map('map', {
+    this.map = L.map(mapContainer, {
       center: [this.report.location[0], this.report.location[1]],
       zoom: 10,
     });

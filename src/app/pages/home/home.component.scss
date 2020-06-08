@@ -26,18 +26,19 @@
 }
 
 .btn-outline-primary:hover {
-  color: var(--light);
-  background-color: var(--color-primary-light);
+  color: inherit;
+  background-color: transparent;
+  border: solid 2px var(--light);
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
-  background-color: var(--color-primary-light);
+  background-color: transparent;
   border: inherit;
 }
 
 .btn-primary {
-  background-color: var(--color-primary) !important;
+  background-color: var(--color-primary);
   border: 0;
 }
 

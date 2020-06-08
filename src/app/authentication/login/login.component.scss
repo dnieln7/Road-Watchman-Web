@@ -1,3 +1,8 @@
+.img-custom {
+  max-width: 20%;
+  min-width: 10%;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -8,11 +13,17 @@
   height: 75vh;
 }
 
-.expand {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+.btn-primary {
+  background-color: var(--color-primary);
+  border: 0;
 }
 
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: var(--color-primary-light);
+  border: inherit;
+}

@@ -1,12 +1,15 @@
-<header class="header-fixed custom-fixed">
-  <div class="header-limiter">
-    <h1><a routerLink="pages"><img src="../../../assets/images/reportes.png" class="img-custom"><span>Road Watchman</span></a>
+<header>
+  <div class="logo-container">
+    <h1>
+      <a routerLink="pages">
+        <span>Road Watchman</span>
+      </a>
     </h1>
-    <nav>
-      <a routerLink="pages">Home</a>
-      <a routerLink="authentication">Login</a>
-    </nav>
   </div>
+  <nav>
+    <a routerLink="pages" (click)="select('HOME')" [class.selected]="selected === 'HOME'">Home</a>
+    <a routerLink="authentication" (click)="select('LOGIN')" [class.selected]="selected == 'LOGIN'">Login</a>
+  </nav>
 </header>
 
-<div class="header-fixed-placeholder custom-placeholder"></div>
+<div class="header-fixed-placeholder"></div>
