@@ -56,7 +56,7 @@ export class ReportDetailComponent implements OnInit, AfterViewInit {
 
     this.map = L.map(mapContainer, {
       center: [this.report.location[0], this.report.location[1]],
-      zoom: 10,
+      zoom: 14,
     });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
