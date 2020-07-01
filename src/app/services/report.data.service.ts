@@ -32,7 +32,7 @@ export class ReportDataService {
   }
 
   update(report: Report): Observable<Report> {
-    return this.http.put<Report>(this.apiURL + '/report/' + report.id, this.httpOptions)
+    return this.http.put<Report>(this.apiURL + '/report/' + report.id, report, this.httpOptions)
       .pipe(retry(1), catchError(handleError));
   }
 }

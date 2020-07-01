@@ -11,9 +11,12 @@
             <h6 class="card-subtitle">{{report.description}}</h6>
           </div>
           <div class="card-footer bg-transparent border-0 mb-0">
-            <button type="button" class="btn btn-primary btn-block" (click)="open(picture)" *ngIf="user !== null">
+            <button type="button" class="btn btn-primary btn-block" (click)="setAsFixed()" *ngIf="user !== null && !report.fixed">
               Set as fixed
             </button>
+            <p class="card-text text-medium" *ngIf="report.fixed">
+              This report was attended and the reported issue is fixed.
+            </p>
             <button type="button" class="btn btn-outline-primary btn-block" (click)="open(picture)"
                     *ngIf="report.picture !== ''">
               View Picture

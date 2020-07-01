@@ -67,12 +67,20 @@ export class ReportDetailComponent implements OnInit, AfterViewInit {
     L.circleMarker([this.report.location[0], this.report.location[1]]).addTo(this.map);
   }
 
-  open(target) {
+  protected open(target) {
     this.modalService.open(target, {ariaLabelledBy: 'title'})
       .result.then((closeResult) => {
       console.log('Closed with result ' + closeResult);
     }, (dismissReason) => {
       console.log('Closed by ' + dismissReason);
+    });
+  }
+
+  protected setAsFixed() {
+    this.report.fixed = true;
+    console.log(this.report);
+    this.dataService.update(this.report).subscribe(value => {
+      this.report = value;
     });
   }
 
