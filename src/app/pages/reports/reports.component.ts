@@ -35,9 +35,9 @@ export class ReportsComponent implements OnInit {
   }
 
   protected getReports() {
-    this.dataService.findAll().subscribe(value => {
-      this.reports = value;
-      this.currentReports = value;
+    this.dataService.findAll().subscribe(responseData => {
+      this.reports = responseData;
+      this.currentReports = responseData;
     });
   }
 

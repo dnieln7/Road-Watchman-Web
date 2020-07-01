@@ -76,12 +76,8 @@
                *ngIf="report.picture === ''">
         </div>
         <div class="card-body-custom">
-          <div class="d-flex flex-row justify-content-between ">
-
             <p class="font-weight-normal">{{report.location_description}}</p>
             <small class="font-weight-light">{{report.date | date}}</small>
-          </div>
-          <p class="font-weight-light">{{report.description}}</p>
           <div class="custom-control custom-checkbox check-end">
             <input type="checkbox" class="custom-control-input" id="fixed" disabled [checked]="report.fixed">
             <label class="custom-control-label font-weight-light" for="fixed">Fixed</label>
