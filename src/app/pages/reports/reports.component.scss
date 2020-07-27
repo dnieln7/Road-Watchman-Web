@@ -1,5 +1,5 @@
 .container-custom {
-  height: 75vh;
+  height: 100vh;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,6 +24,7 @@
 /*Date Input*/
 
 .date-container {
+  align-self: center;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -133,36 +134,41 @@
 
 /*Card list*/
 
-.card-container-custom {
+.item-container {
   display: flex;
   flex-direction: row;
 }
 
-.card-image-custom {
-  flex-basis: 10%;
-  max-width: 10%;
-  align-self: center;
-  margin-right: 1em;
+.location-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
-.card-body-custom {
+.check-container {
   display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.card-body-custom .check-end {
-  align-self: flex-end;
+.icon-container {
+  width: 5rem;
 }
 
 @media (max-width: 800px) {
+  .item-container {
+    flex-direction: column;
+  }
 
-  .card-image-custom {
-    flex-basis: 20%;
-    max-width: 20%;
+  .location-container {
+    padding-bottom: 1em;
+  }
+
+  .check-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0;
   }
 }
 

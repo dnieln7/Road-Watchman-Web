@@ -1,5 +1,5 @@
-<div class="p-2 position-sticky" *ngIf="currentReports !== null"
-     [className]="currentReports.length < 6 ? 'container-custom p-2 position-sticky': 'p-2 position-sticky'">
+<div *ngIf="currentReports !== null"
+     [className]="currentReports.length < 6 ? (mobile ? 'p-2 position-sticky' : 'p-2 position-sticky container-custom') : 'p-2 position-sticky'">
   <div class="mb-2 date-container">
     <label class="col-form-label mr-2">Filter by date</label>
     <form class="form-inline date-sub-container">
@@ -67,18 +67,18 @@
 
   </div>
   <div class="list-group" *ngFor="let report of currentReports">
-    <a class="list-group-item list-group-item-action active my-1 text-dark bg-custom"
-       routerLink="view/{{report.id}}">
-      <div class="card-container-custom">
-        <div class="card-image-custom">
-          <img src="{{report.picture}}" alt="thumbnail" class="img-thumbnail" *ngIf="report.picture !== ''">
-          <img src="../../../assets/images/logo.png" alt="thumbnail" class="img-thumbnail"
+    <a class="list-group-item list-group-item-action active my-1 text-dark bg-custom" routerLink="view/{{report.id}}">
+      <div class="item-container">
+        <div class="location-container">
+          <img src="{{report.picture}}" alt="thumbnail" class="rounded icon-container"
+               *ngIf="report.picture !== ''">
+          <img src="../../../assets/images/logo.png" alt="thumbnail" class="rounded icon-container"
                *ngIf="report.picture === ''">
+          <p class="pl-2 font-weight-normal align-self-center">{{report.location_description}}</p>
         </div>
-        <div class="card-body-custom">
-            <p class="font-weight-normal">{{report.location_description}}</p>
-            <small class="font-weight-light">{{report.date | date}}</small>
-          <div class="custom-control custom-checkbox check-end">
+        <div class="check-container">
+          <small class="font-weight-light">{{report.date | date}}</small>
+          <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="fixed" disabled [checked]="report.fixed">
             <label class="custom-control-label font-weight-light" for="fixed">Fixed</label>
           </div>

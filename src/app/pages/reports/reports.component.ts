@@ -10,6 +10,7 @@ import {NgbCalendar, NgbDate, NgbDateParserFormatter} from '@ng-bootstrap/ng-boo
 })
 export class ReportsComponent implements OnInit {
 
+  private mobile: boolean;
   private reports: Array<Report>;
   protected currentReports: Array<Report>;
 
@@ -31,6 +32,7 @@ export class ReportsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.mobile = navigator.userAgent.includes('Mobile');
     this.getReports();
   }
 
