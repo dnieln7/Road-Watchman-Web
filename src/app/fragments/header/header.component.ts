@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../models/User';
 import {NavigationEnd, Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,9 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  protected user: User;
-  protected selected: string;
+  public user: User;
+  public selected: string;
+  public lang: string;
 
   constructor(private router: Router) {
     this.user = null;
@@ -22,7 +24,6 @@ export class HeaderComponent implements OnInit {
         this.select(val.urlAfterRedirects.split('/')[2]);
       }
     });
-
     this.user = JSON.parse(localStorage.getItem('user'));
   }
 

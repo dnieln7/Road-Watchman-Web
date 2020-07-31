@@ -3,8 +3,16 @@
     <h1><a routerLink="pages"><img src="../../../assets/images/logo_background_trasparent.png" class="img-custom"></a>
     </h1>
     <nav>
-      <a>Contact Us</a>
+      <a>© 2020</a>
+      <a>dnieln7@gmail.com</a>
       <a href="https://github.com/dnieln7">Github</a>
+      <a>
+        <select id="language" #language (change)="changeLanguage(language.value)">
+          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
+            {{ lang }}
+          </option>
+        </select>
+      </a>
     </nav>
   </div>
 </footer>

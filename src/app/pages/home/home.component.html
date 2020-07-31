@@ -1,17 +1,17 @@
-<div class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded back-img">
-  <div class="col-md-5 text-light p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">Road Watchman</h1>
-    <p class="lead font-weight-normal">View uploaded reports from all users</p>
-    <a class="btn btn-outline-primary" routerLink="/pages/reports">View Reports</a>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded shadow back-img">
+  <div class="text-light p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">{{"HOME.BRAND" | translate}}</h1>
+    <p class="lead font-weight-normal"><strong class="font-weight-bold">{{"HOME.BRAND" | translate}}</strong> {{"HOME.ABOUT_MESSAGE" | translate}}</p>
+    <a class="btn btn-outline-light font-size-title font-weight-normal border-0 bg-transparent" routerLink="/pages/reports">{{"HOME.VIEW" | translate}}</a>
   </div>
 </div>
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded bg-light">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center shadow rounded bg-light">
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
-      <h2 class="display-5">Download the app</h2>
-      <p class="lead">Start sending reports now</p>
-      <a class="btn btn-primary" href="#">Download now</a>
+      <h2 class="display-5">{{"HOME.DOWNLOAD_TITLE" | translate}}</h2>
+      <p class="lead">{{"HOME.DOWNLOAD_MESSAGE" | translate}}</p>
+      <a class="btn btn-primary" href="#">{{"HOME.DOWNLOAD_NOW" | translate}}</a>
     </div>
     <div class="bg-light box-shadow mx-auto" style="height: 5rem;">
     </div>
@@ -21,20 +21,20 @@
   <div class="product-device product-device-2 box-shadow d-none d-md-block"><!--Image from app--></div>
 </div>
 
-<div *ngIf="user === null" class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded bg-light">
+<div *ngIf="user === null" class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded shadow bg-light">
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
-      <h2 class="display-5"><a routerLink="/authentication" class="card-link">Log In</a></h2>
-      <p class="lead">View and edit the reports</p>
+      <h2 class="display-5"><a routerLink="/authentication" class="card-link">{{"HOME.LOGIN" | translate}}</a></h2>
+      <p class="lead">{{"HOME.LOGIN_MESSAGE" | translate}}</p>
     </div>
   </div>
 </div>
 
-<div *ngIf="user !== null" class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded bg-light">
+<div *ngIf="user !== null" class="position-relative overflow-hidden p-3 p-md-5 m-3 text-center rounded shadow bg-light">
   <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
     <div class="my-3 p-3">
-      <h2 class="display-5">Welcome</h2>
-      <p class="lead">Logged as {{user.username}}</p>
+      <h2 class="display-5">{{"HOME.LOGIN_WELCOME" | translate}}</h2>
+      <p class="lead">{{"HOME.LOGIN_LOGGED" | translate}} {{user.username}}</p>
     </div>
   </div>
 </div>

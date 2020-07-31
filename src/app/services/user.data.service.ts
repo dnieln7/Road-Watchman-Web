@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {retry, catchError} from 'rxjs/operators';
 import {handleError} from './data.service.utils';
 import {Login} from '../models/Login';
-import {Session} from '../models/Session';
+import {AuthResponse} from '../models/AuthResponse';
 
 @Injectable()
 export class UserDataService {
@@ -22,8 +22,8 @@ export class UserDataService {
     })
   };
 
-  login(login: Login): Observable<Session> {
-    return this.http.post<Session>(this.apiURL + '/login?type=' + login.type, login, this.httpOptions)
+  login(login: Login): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(this.apiURL + '/auth/login?type=' + login.type, login, this.httpOptions)
       .pipe(retry(1), catchError(handleError));
   }
 }

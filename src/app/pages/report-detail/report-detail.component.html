@@ -1,7 +1,7 @@
-<div class="m-4">
+<div class="m-4 shadow rounded">
   <div class="card border-0 p-2">
     <div class="row no-gutters">
-      <div class="col-md-4 position-sticky">
+      <div class="col-md-4 position-sticky border-dark">
         <div id="map"></div>
       </div>
       <div class="col-md-6 col-lg-8">
@@ -12,14 +12,14 @@
           </div>
           <div class="card-footer bg-transparent border-0 mb-0">
             <button type="button" class="btn btn-primary btn-block" (click)="setAsFixed()" *ngIf="user !== null && !report.fixed">
-              Set as fixed
+              {{"REPORTS.SET_AS_FIXED" | translate}}
             </button>
             <p class="card-text text-medium" *ngIf="report.fixed">
-              This report was attended and the reported issue is fixed.
+              {{"REPORTS.IS_FIXED" | translate}}
             </p>
             <button type="button" class="btn btn-outline-primary btn-block" (click)="open(picture)"
                     *ngIf="report.picture !== ''">
-              View Picture
+              {{"REPORTS.VIEW_PICTURE" | translate}}
             </button>
             <p class="card-text mt-2">
               <small class="text-muted">{{report.date | date}}</small>
@@ -33,7 +33,7 @@
 
 <ng-template #picture let-modal>
   <div class="modal-header">
-    <h6 class="modal-title" id="title">Picture view</h6>
+    <h6 class="modal-title" id="title">{{"REPORTS.PICTURE_VIEW" | translate}}</h6>
     <button type="button" class="close text-danger" aria-label="Close" (click)="modal.dismiss()">
       <span aria-hidden="true">&times;</span>
     </button>

@@ -5,10 +5,23 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {DatePipe} from '@angular/common';
 import {FragmentsModule} from './fragments/fragments.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-const A_MODULES = [BrowserModule, HttpClientModule, NgbModule];
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
+const A_MODULES = [BrowserModule, HttpClientModule, NgbModule, TranslateModule.forRoot({
+  loader: {
+    provide: TranslateLoader,
+    useFactory: HttpLoaderFactory,
+    deps: [HttpClient]
+  },
+  defaultLanguage: 'es'
+})];
 
 const MODULES = [AppRoutingModule, FragmentsModule];
 

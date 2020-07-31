@@ -29,10 +29,10 @@ L.Marker.prototype.options.icon = iconDefault;
 })
 export class ReportDetailComponent implements OnInit, AfterViewInit {
 
-  protected user: User;
+  public user: User;
 
   private id: number;
-  private report: Report;
+  public report: Report;
   private map: L.map;
 
   constructor(

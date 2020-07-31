@@ -1,7 +1,7 @@
 <div *ngIf="currentReports !== null"
      [className]="currentReports.length < 6 ? (mobile ? 'p-2 position-sticky' : 'p-2 position-sticky container-custom') : 'p-2 position-sticky'">
   <div class="mb-2 date-container">
-    <label class="col-form-label mr-2">Filter by date</label>
+    <label class="col-form-label mr-2">{{"REPORTS.DATE" | translate}}</label>
     <form class="form-inline date-sub-container">
       <div class="form-group hidden">
         <div class="input-group">
@@ -31,7 +31,7 @@
         <div class="input-group">
           <input #dpFromDate
                  class="form-control no-cursor"
-                 placeholder="Select start date"
+                 placeholder="{{'REPORTS.DATE_START' | translate}}"
                  name="dpFromDate"
                  [value]="formatter.format(from)"
                  (input)="from = validateInput(from, dpFromDate.value)"
@@ -49,7 +49,7 @@
         <div class="input-group">
           <input #dpToDate
                  class="form-control no-cursor"
-                 placeholder="Select end date"
+                 placeholder="{{'REPORTS.DATE_END' | translate}}"
                  name="dpToDate"
                  [value]="formatter.format(to)"
                  (input)="to = validateInput(to, dpToDate.value)"
@@ -80,7 +80,7 @@
           <small class="font-weight-light">{{report.date | date}}</small>
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="fixed" disabled [checked]="report.fixed">
-            <label class="custom-control-label font-weight-light" for="fixed">Fixed</label>
+            <label class="custom-control-label font-weight-light" for="fixed">{{"REPORTS.FIXED" | translate}}</label>
           </div>
         </div>
       </div>
@@ -89,7 +89,6 @@
 </div>
 
 <div class="spinner-container" *ngIf="currentReports === null">
-  <div class="spinner-grow spinner-custom" role="status" style="background-color: var(--color-secondary">
-    <span class="sr-only">Loading...</span>
+  <div class="spinner-grow spinner-custom" role="status" style="background-color: var(--color-secondary)">
   </div>
 </div>

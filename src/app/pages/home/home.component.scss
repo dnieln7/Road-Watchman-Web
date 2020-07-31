@@ -1,5 +1,10 @@
 .back-img {
-  background-image: url("src/assets/images/main.png ");
+  background: url("src/assets/images/main.png ") no-repeat;
+  background-size: 100% 100%;
+}
+
+.font-size-title {
+  font-size: 1.5em;
 }
 
 .product-device {
@@ -18,23 +23,6 @@
   right: auto;
   left: 10%;
   background-color: var(--color-secondary);
-}
-
-.btn-outline-primary {
-  color: var(--light);
-  border: 0;
-}
-
-.btn-outline-primary:hover {
-  color: inherit;
-  background-color: transparent;
-  border: solid 2px var(--light);
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
-.show > .btn-outline-primary.dropdown-toggle {
-  background-color: transparent;
-  border: inherit;
 }
 
 .btn-primary {

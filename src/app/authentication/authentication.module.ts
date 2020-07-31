@@ -4,8 +4,9 @@ import {LoginComponent} from './login/login.component';
 import {AuthenticationRoutingModule} from './authentication.routing.module';
 import {UserDataService} from '../services/user.data.service';
 import {FormsModule} from '@angular/forms';
+import {TranslateModule} from '@ngx-translate/core';
 
-const MODULES = [AuthenticationRoutingModule, FormsModule];
+const MODULES = [AuthenticationRoutingModule, FormsModule, TranslateModule.forChild()];
 
 const COMPONENTS = [LoginComponent];
 

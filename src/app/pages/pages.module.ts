@@ -7,8 +7,9 @@ import {ReportsComponent} from './reports/reports.component';
 import {ReportDetailComponent} from './report-detail/report-detail.component';
 import {ReportDataService} from '../services/report.data.service';
 import {FormsModule} from '@angular/forms';
+import {TranslateModule} from '@ngx-translate/core';
 
-const MODULES = [CommonModule, PagesRoutingModule, NgbModule, FormsModule];
+const MODULES = [CommonModule, PagesRoutingModule, NgbModule, FormsModule, TranslateModule.forChild()];
 
 const COMPONENTS = [HomeComponent, ReportsComponent, ReportDetailComponent];
 
