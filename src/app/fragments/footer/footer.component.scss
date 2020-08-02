@@ -1,69 +1,17 @@
-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-
-  height: 15vh;
-  width: 100%;
-
-  padding: 1rem;
-
-  font-family: var(--normal-custom);
-;
-  background-color: var(--dark);
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-.footer-body {
-  align-self: center;
-}
-
-/* Logo */
-.footer-body h1 {
-  float: none;
-  line-height: 1;
-  text-align: center;
-  font-weight: normal;
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-/*Brand*/
-.footer-body h1 a {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--color-primary);
-}
-
-/* Logo Img*/
-.img-custom {
-  box-sizing: border-box;
-  height: 10%;
-  width: 10%;
-  border: solid 0;
-  border-radius: 25%;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 /* The navigation links */
-.footer-body nav {
-  float: none;
-  text-align: center;
+nav {
   font-size: 1em;
 }
 
 /*Brand links*/
-.footer-body nav a {
-  display: inline-block;
+nav a {
   color: var(--color-primary-light);
   text-decoration: none;
-  margin: 0 0.5em;
+  margin-left: 0.5em;
 }
 
 /*Brand links when hover*/
-.footer-body nav a:hover {
+nav a:hover {
   color: var(--color-secondary);
 }
 
