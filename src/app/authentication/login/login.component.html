@@ -1,0 +1,18 @@
+<div class="form-container">
+  <form class="form-signin" (ngSubmit)="logIn()">
+    <img class="mb-4 img-custom" src="../../../assets/images/logo_background_trasparent.png" alt="">
+    <h1 class="h3 mb-3 font-weight-normal">{{"LOGIN.TITLE" | translate}}</h1>
+    <input type="email" id="inputEmail" class="form-control mb-2" placeholder="{{'LOGIN.EMAIL' | translate}}" required autofocus
+           name="email"
+           [(ngModel)]="login.email">
+    <input type="password" id="inputPassword" class="form-control" autocomplete="on" placeholder="{{'LOGIN.PASSWORD' | translate}}" required name="password"
+           [(ngModel)]="login.password">
+    <!--    <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>-->
+    <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">{{"LOGIN.LOGIN" | translate}}</button>
+    <p class="mt-4 mb-3 text-muted">© 2020</p>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+{
+  "NAV": {
+    "BRAND": "Road watchman",
+    "HOME": "Home",
+    "LOGIN": "Log In",
+    "LOGOUT": "Log Out"
+  },
+  "LOGIN": {
+    "TITLE": "Log In",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "LOGIN": "Login"
+  },
+  "HOME": {
+    "BRAND": "Road watchman",
+    "VIEW": "View uploaded reports",
+    "DOWNLOAD_TITLE": "Download the app",
+    "DOWNLOAD_MESSAGE": "Start sending reports now",
+    "DOWNLOAD_NOW": "Download",
+    "LOGIN": "Log In as admin",
+    "LOGIN_MESSAGE": "Update the reports that had been attended",
+    "LOGIN_WELCOME": "Logged as admin",
+    "LOGIN_LOGGED": "Welcome ",
+    "A": "allows ",
+    "ABOUT_MESSAGE": "allows its users to send reports of damage found on the road, these reports are reviewed by the corresponding authorities to be subsequently treated"
+  },
+  "REPORTS": {
+    "DATE": "Short by date",
+    "DATE_START": "Start date",
+    "DATE_END": "End date",
+    "FIXED": "Attended",
+    "NO_FIXED": "Waiting",
+    "SET_AS_FIXED": "Mark as attended",
+    "IS_FIXED": "This report was attended and the reported issue has been fixed",
+    "VIEW_PICTURE": "View photo",
+    "PICTURE_VIEW": "Attached photo"
+  }
+}

@@ -1,0 +1,19 @@
+<header>
+  <div class="logo-container">
+    <h1>
+      <a routerLink="pages">
+        <span>{{'NAV.BRAND' | translate}}</span>
+      </a>
+    </h1>
+  </div>
+  <nav>
+    <a routerLink="pages" (click)="select('home')" [class.selected]="selected === 'home'">{{'NAV.HOME' | translate}}</a>
+    <a routerLink="authentication" (click)="select('login')" [class.selected]="selected == 'login'"
+       *ngIf="user === null">
+      {{'NAV.LOGIN' | translate}}
+    </a>
+    <p class="link" (click)="logout()" *ngIf="user !== null">{{'NAV.LOGOUT' | translate}}</p>
+  </nav>
+</header>
+
+<div class="header-fixed-placeholder"></div>

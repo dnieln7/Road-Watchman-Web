@@ -1,0 +1,173 @@
+.container-custom {
+  height: 100vh;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*Spinner while loading*/
+
+.spinner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 75vh;
+}
+
+.spinner-container .spinner-custom {
+  position: fixed;
+  top: 50%;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*Date Input*/
+
+.date-container {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.input-fields {
+  margin-left: 1em;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*Overwriting Styles*/
+
+.no-cursor {
+  cursor: default;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border: 0;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: var(--color-primary-light);
+  border: inherit;
+}
+
+.form-group.hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+
+.custom-day.focused {
+  background-color: var(--light);
+}
+
+.custom-day.range, .custom-day:hover {
+  background-color: var(--color-primary);
+  color: var(--light);
+}
+
+.custom-day.faded {
+  background-color: var(--color-primary-light);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*Responsive Date Input*/
+
+@media (max-width: 800px) {
+  .date-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .date-sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -2em;
+  }
+
+  .input-fields {
+    margin-left: 0;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*Rewriting Styles*/
+
+.bg-custom {
+  border: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--light);
+}
+
+.bg-custom:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--color-primary-light);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*Card list*/
+
+.item-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.location-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.check-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon-container {
+  width: 5rem;
+}
+
+@media (max-width: 800px) {
+  .item-container {
+    flex-direction: column;
+  }
+
+  .location-container {
+    padding-bottom: 1em;
+  }
+
+  .check-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+}
+

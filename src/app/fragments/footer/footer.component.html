@@ -1,0 +1,21 @@
+<footer>
+  <div class="bg-dark p-2 text-center">
+    <h1>
+      <a routerLink="pages">
+        <img src="../../../assets/images/logo_background_trasparent.png" style="height: 1em; width: auto">
+      </a>
+    </h1>
+    <nav class="">
+      <a style="">© 2020</a>
+      <a>dnieln7@gmail.com</a>
+      <a href="https://github.com/dnieln7">Github</a>
+      <a>
+        <select id="language" #language (change)="changeLanguage(language.value)">
+          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
+            {{ lang }}
+          </option>
+        </select>
+      </a>
+    </nav>
+  </div>
+</footer>

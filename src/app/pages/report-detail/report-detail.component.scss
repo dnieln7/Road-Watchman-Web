@@ -1,0 +1,32 @@
+#map {
+  height: 30rem;
+}
+
+.text-medium {
+  font-size: 1.2em;
+}
+
+.btn-primary {
+  border: 0;
+  background-color: var(--color-primary);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: var(--color-primary-light);
+  border: inherit;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-outline-primary {
+  border: 0;
+  color: var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  color: var(--color-primary-light);
+  background-color: transparent;
+}

@@ -1,0 +1,28 @@
+/* The navigation links */
+nav {
+  font-size: 1em;
+}
+
+/*Brand links*/
+nav a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  margin-left: 0.5em;
+}
+
+/*Brand links when hover*/
+nav a:hover {
+  color: var(--color-secondary);
+}
+
+select {
+  background-color: var(--dark);
+  color: var(--color-primary-light);
+  border: 0;
+}
+
+select:hover {
+  background-color: var(--dark);
+  color: var(--color-secondary);
+  border: 0;
+}

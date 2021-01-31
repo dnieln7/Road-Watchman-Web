@@ -1,0 +1,94 @@
+<div *ngIf="currentReports !== null"
+     [className]="currentReports.length < 6 ? (mobile ? 'p-2 position-sticky' : 'p-2 position-sticky container-custom') : 'p-2 position-sticky'">
+  <div class="mb-2 date-container">
+    <label class="col-form-label mr-2">{{"REPORTS.DATE" | translate}}</label>
+    <form class="form-inline date-sub-container">
+      <div class="form-group hidden">
+        <div class="input-group">
+          <input name="datepicker"
+                 class="form-control bg-transparent border-0"
+                 ngbDatepicker
+                 #datepicker="ngbDatepicker"
+                 [autoClose]="'outside'"
+                 (dateSelect)="onDateSelection($event)"
+                 [displayMonths]="1"
+                 [dayTemplate]="t"
+                 outsideDays="hidden"
+                 [startDate]="from!">
+          <ng-template #t let-date let-focused="focused">
+            <span class="custom-day"
+                  [class.focused]="focused"
+                  [class.range]="isRange(date)"
+                  [class.faded]="isHovered(date) || isInside(date)"
+                  (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+              {{ date.day }}
+            </span>
+          </ng-template>
+        </div>
+      </div>
+      <div class="form-group input-fields">
+        <div class="input-group">
+          <input #dpFromDate
+                 class="form-control no-cursor"
+                 placeholder="{{'REPORTS.DATE_START' | translate}}"
+                 name="dpFromDate"
+                 [value]="formatter.format(from)"
+                 (input)="from = validateInput(from, dpFromDate.value)"
+                 readonly>
+          <div class="input-group-append">
+            <button
+              class="btn btn-primary material-icons"
+              (click)="datepicker.toggle()"
+              type="button">date_range
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group input-fields">
+        <div class="input-group">
+          <input #dpToDate
+                 class="form-control no-cursor"
+                 placeholder="{{'REPORTS.DATE_END' | translate}}"
+                 name="dpToDate"
+                 [value]="formatter.format(to)"
+                 (input)="to = validateInput(to, dpToDate.value)"
+                 readonly>
+          <div class="input-group-append">
+            <button
+              class="btn btn-primary material-icons"
+              (click)="datepicker.toggle()"
+              type="button">date_range
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <div class="list-group" *ngFor="let report of currentReports">
+    <a class="list-group-item list-group-item-action active my-1 text-dark bg-custom" routerLink="view/{{report.id}}">
+      <div class="item-container">
+        <div class="location-container">
+          <img src="{{report.picture}}" alt="thumbnail" class="rounded icon-container"
+               *ngIf="report.picture !== ''">
+          <img src="../../../assets/images/logo.png" alt="thumbnail" class="rounded icon-container"
+               *ngIf="report.picture === ''">
+          <p class="pl-2 font-weight-normal align-self-center">{{report.location_description}}</p>
+        </div>
+        <div class="check-container">
+          <small class="font-weight-light">{{report.date | date}}</small>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="fixed" disabled [checked]="report.fixed">
+            <label class="custom-control-label font-weight-light" for="fixed">{{"REPORTS.FIXED" | translate}}</label>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="spinner-container" *ngIf="currentReports === null">
+  <div class="spinner-grow spinner-custom" role="status" style="background-color: var(--color-secondary)">
+  </div>
+</div>

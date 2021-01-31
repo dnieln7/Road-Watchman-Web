@@ -1,0 +1,37 @@
+{
+  "NAV": {
+    "BRAND": "Vigilante de carretera",
+    "HOME": "Inicio",
+    "LOGIN": "Iniciar sesión",
+    "LOGOUT": "Cerrar sesión"
+  },
+  "LOGIN": {
+    "TITLE": "Iniciar sesión",
+    "EMAIL": "Correo electrónico",
+    "PASSWORD": "Contraseña",
+    "LOGIN": "Ingresar"
+  },
+  "HOME": {
+    "BRAND": "Vigilante de carretera",
+    "VIEW": "Ver reportes",
+    "DOWNLOAD_TITLE": "Descarga la aplicación",
+    "DOWNLOAD_MESSAGE": "Comience a subir reportes ahora",
+    "DOWNLOAD_NOW": "Descargar",
+    "LOGIN": "Ingresar como administrador",
+    "LOGIN_MESSAGE": "Actualiza los reportes que han sido atendidos",
+    "LOGIN_WELCOME": "Ha iniciado sesión como administrador",
+    "LOGIN_LOGGED": "Bienvenido ",
+    "ABOUT_MESSAGE": "permite a sus usuarios enviar reportes de los daños que se encuentren en la carretera, estos reportes son revisados por las autoridades correspondientes para posteriormente ser atendidos"
+  },
+  "REPORTS": {
+    "DATE": "Filtrar por fecha",
+    "DATE_START": "Fecha inicio",
+    "DATE_END": "Fecha final",
+    "FIXED": "Atendido",
+    "NO_FIXED": "Pendiente",
+    "SET_AS_FIXED": "Marcar como atendido",
+    "IS_FIXED": "Este reporte ha sido atendido y el problema ha sido arreglado",
+    "VIEW_PICTURE": "Ver foto",
+    "PICTURE_VIEW": "Foto adjunta"
+  }
+}

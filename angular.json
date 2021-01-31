@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reportesWeb": {
+    "road-watchman-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/reportesWeb",
+            "outputPath": "dist/road-watchman-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,12 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images/",
+                "output": "./assets"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -67,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "reportesWeb:build"
+            "browserTarget": "road-watchman-front:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "reportesWeb:build:production"
+              "browserTarget": "road-watchman-front:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "reportesWeb:build"
+            "browserTarget": "road-watchman-front:build"
           }
         },
         "test": {
@@ -115,15 +120,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "reportesWeb:serve"
+            "devServerTarget": "road-watchman-front:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "reportesWeb:serve:production"
+              "devServerTarget": "road-watchman-front:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "reportesWeb"
+  "defaultProject": "road-watchman-front"
 }
